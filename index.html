@@ -14,23 +14,27 @@
 </head>
 
 <body>
+    <!-- header -->
     <div class="jumbotron jumbotron-fluid page-header">
         <div class="container">
-            <p class="lead">Järgmise riigipühani</p>
-            <h1 id="aeg1" class="display-4"></h1>
-            <p>Jõululaupäev 24. detsember</p>
+            <h1>Järgmise riigipühani</h1>
+            <h1 id="aeg1" class="display-4 tekst1"></h1>
+            <p class="lead">Jõululaupäev 24. detsember</p>
             <hr class="my-4">
-            <p class="lead">Nädalavahetuseni</p>
-            <h1 id="aeg2" class="display-4"></h1>
-            <p>29. november 18:00</p>
+            <h2>Nädalavahetuseni</h2>
+            <h1 id="aeg2" class="display-4 tekst2"></h1>
+            <p class="lead">29. november 18:00</p>
         </div>
     </div>
 
     <div class="container">
+        <!-- 1 rida -->
         <div class="row">
             <div class="col-12 col-md-4">
                 <div class="card border-success mb-3 shadow rounded">
-                    <div id="nupp1" class="card-header pointer" onclick="nupp1()">Esmaspäev 23. detsember <span class="badge badge-secondary">2019</span></div>
+                    <div id="nupp1" class="card-header pointer"
+                        onclick="kutsuTimer(kuupaev[2], idElement[2]); this.onclick=null;">Esmaspäev 23.
+                        detsember <span class="badge badge-secondary">2019</span></div>
                     <div class="card-body text-success">
                         <h5 class="card-title">Jõululaupäevale eelnev päev</h5>
                         <p class="card-text">Lühendatud tööpäev</p>
@@ -39,7 +43,9 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="card border-danger mb-3 shadow rounded">
-                    <div id="nupp2" class="card-header pointer" onclick="nupp2()">Teisipäev 24. detsember <span class="badge badge-secondary">2019</span></div>
+                    <div id="nupp2" class="card-header pointer"
+                        onclick="kutsuTimer(kuupaev[3], idElement[3]); this.onclick=null;">Teisipäev 24.
+                        detsember <span class="badge badge-secondary">2019</span></div>
                     <div class="card-body text-danger">
                         <h5 class="card-title">Jõululaupäev</h5>
                         <p class="card-text">Riigipüha, puhkepäev</p>
@@ -48,17 +54,22 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="card border-danger mb-3 shadow rounded">
-                    <div id="nupp3" class="card-header pointer" onclick="nupp3()">Kolmapäev 25. detsember <span class="badge badge-secondary">2019</span></div>
+                    <div id="nupp3" class="card-header pointer"
+                        onclick="kutsuTimer(kuupaev[4], idElement[4]); this.onclick=null;">Kolmapäev 25.
+                        detsember <span class="badge badge-secondary">2019</span></div>
                     <div class="card-body text-danger">
                         <h5 class="card-title">Esimene jõulupüha</h5>
                         <p class="card-text">Riigipüha, puhkepäev</p>
                     </div>
                 </div>
             </div>
-
+            <!-- 2 rida -->
             <div class="col-12 col-md-4">
                 <div class="card border-danger mb-3 shadow rounded">
-                    <div class="card-header">Neljapäev 26. detsember <span class="badge badge-secondary">2019</span></div>
+                    <div id="nupp4" class="card-header pointer"
+                        onclick="kutsuTimer(kuupaev[5], idElement[5]); this.onclick=null;">Neljapäev 26.
+                        detsember <span class="badge badge-secondary">2019</span>
+                    </div>
                     <div class="card-body text-danger">
                         <h5 class="card-title">Teine jõulupüha</h5>
                         <p class="card-text">Riigipüha, puhkepäev</p>
@@ -67,7 +78,10 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="card border-success mb-3 shadow rounded">
-                    <div class="card-header">Teisipäev 31. detsember <span class="badge badge-secondary">2019</span></div>
+                    <div id="nupp5" class="card-header pointer"
+                        onclick="kutsuTimer(kuupaev[6], idElement[6]); this.onclick=null;">Teisipäev 31.
+                        detsember <span class="badge badge-secondary">2019</span>
+                    </div>
                     <div class="card-body text-success">
                         <h5 class="card-title">Uuele aastale eelnev päev</h5>
                         <p class="card-text">Lühendatud tööpäev</p>
@@ -76,17 +90,18 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="card border-danger mb-3 shadow rounded">
-                    <div class="card-header">Kolmapäev 01. jaanuar <span class="badge badge-warning">2020</span></div>
+                    <div id="nupp6" class="card-header pointer"
+                        onclick="kutsuTimer(kuupaev[7], idElement[7]); this.onclick=null;">Kolmapäev 01.
+                        jaanuar <span class="badge badge-warning">2020</span></div>
                     <div class="card-body text-danger">
                         <h5 class="card-title">Uusaasta</h5>
                         <p class="card-text">Riigipüha, puhkepäev</p>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
+    <!-- footer rida -->
     <footer class="page-footer">
         <p>© Siim 2019</p>
         <p>
