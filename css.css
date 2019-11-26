@@ -16,3 +16,7 @@
 #aeg2 {
     font-size: 36px;
 }
+
+.pointer {
+    cursor: pointer;
+}
