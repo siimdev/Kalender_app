@@ -30,7 +30,7 @@ const x = setInterval(function() {
     clearInterval(x);
     document.getElementById("aeg1").innerHTML = "...";
   }
-  if (distance12 < 0) {
+  if (distance2 < 0) {
     clearInterval(x);
     document.getElementById("aeg2").innerHTML = "...";
   }
