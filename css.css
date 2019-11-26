@@ -1,3 +1,9 @@
+/* #nupp1 {
+    background-image: url("pildid/joulud.jpg");
+    background-size: cover;
+    height: 100%
+} */
+
 .page-header {
     background-color: #f9f9f9;
     border-bottom: .05rem solid #e5e5e5;
