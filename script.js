@@ -1,38 +1,50 @@
-// Set the date we're counting down to
-const taimer1 = new Date("Dec 24, 2019 00:00:00").getTime();
-const taimer2 = new Date("Nov 29, 2019 18:00:00").getTime();
+const kuupaev = [
+    "Dec 24, 2019 00:00:00",
+    "Nov 29, 2019 18:00:00",
+    "Dec 23, 2019 00:00:00",
+    "Dec 24, 2019 00:00:00",
+    "Dec 25, 2019 00:00:00",
+    "Dec 26, 2019 00:00:00",
+    "Dec 31, 2019 00:00:00",
+    "Jan 01, 2020 00:00:00"
+]
+const idElement = [
+    "aeg1",
+    "aeg2",
+    "nupp1",
+    "nupp2",
+    "nupp3",
+    "nupp4",
+    "nupp5",
+    "nupp6"
+]
+const spinner = document.createElement('div');
+spinner.className = 'spinner-border';
+
+function taimer(kuupaev, asukoht) {
+    const x = setInterval(function () {
+        let praegu = new Date().getTime();
+        let kaugus = kuupaev - praegu;
+        let days = Math.floor(kaugus / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((kaugus % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((kaugus % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((kaugus % (1000 * 60)) / 1000);
+        document.getElementById(asukoht).innerHTML = days + " päeva " + hours + " tundi " + minutes + " minutit " + seconds + " sekundit ";
+        if (kaugus < 0) {
+            clearInterval(x);
+            document.getElementById(asukoht).innerHTML = "...";
+        };
+    }, 1000);
+};
 
 
-const x = setInterval(function() {
-  const now = new Date().getTime();
+function kutsuTimer(x, y) {
+    const kuupaev = new Date(x).getTime();
+    const asukoht = y;
+    document.getElementById(asukoht).innerHTML = "";
+    document.getElementById(asukoht).appendChild(spinner);
+    taimer(kuupaev, asukoht)
+}
 
-  // Find the distance between now and the count down date
-  let distance1 = taimer1 - now;
-  let distance2 = taimer2 - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  let days1 = Math.floor(distance1 / (1000 * 60 * 60 * 24));
-  let hours1 = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes1 = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds1 = Math.floor((distance1 % (1000 * 60)) / 1000);
-
-  let days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
-  let hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
-
-  // Display the result in the element
-  document.getElementById("aeg1").innerHTML = days1 + " päeva " + hours1 + " tundi " + minutes1 + " minutit " + seconds1 + " sekundit ";
-  document.getElementById("aeg2").innerHTML = days2 + " päeva " + hours2 + " tundi " + minutes2 + " minutit " + seconds2 + " sekundit ";
-
-  // If the count down is finished, write some text
-  if (distance1 < 0) {
-    clearInterval(x);
-    document.getElementById("aeg1").innerHTML = "...";
-  }
-  if (distance2 < 0) {
-    clearInterval(x);
-    document.getElementById("aeg2").innerHTML = "...";
-  }
-}, 1000);
-
+kutsuTimer(kuupaev[0], idElement[0]);
+kutsuTimer(kuupaev[1], idElement[1]);
